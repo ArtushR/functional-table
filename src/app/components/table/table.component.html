@@ -1,0 +1,97 @@
+<div class="table-container">
+  <mat-form-field appearance="fill" class="filter-input">
+    <mat-label>Search</mat-label>
+    <input matInput (input)="applyFilter($event)" placeholder="Search users">
+  </mat-form-field>
+
+  <div *ngIf="isAnyColumnHidden()" class="show-all-columns">
+    <button mat-flat-button (click)="showAllColumns()">
+      <mat-icon>visibility</mat-icon> Show all columns
+    </button>
+  </div>
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Status column -->
+    <ng-container *ngIf="isColumnVisible('status')" matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>
+      <mat-icon class="hide-column-button first-column" [matTooltip]="'Hide column'" (click)="toggleColumnVisibility('status')">visibility_off</mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div [ngClass]="{'status-indicator': true, 'active': element.isActive, 'inactive': !element.isActive}"></div>
+      </td>
+    </ng-container>
+
+    <!-- Picture column -->
+    <ng-container *ngIf="isColumnVisible('picture')" matColumnDef="picture">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-icon class="hide-column-button" [matTooltip]="'Hide column'" (click)="toggleColumnVisibility('picture')">visibility_off</mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <img style="border-radius: 50%; border: 2px solid #7676f5" [src]="element.picture" alt="{{ element.name.first }}" width="32">
+      </td>
+    </ng-container>
+
+    <!-- User column -->
+    <ng-container *ngIf="isColumnVisible('user')" matColumnDef="user">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        User <mat-icon class="hide-column-button" [matTooltip]="'Hide column'" (click)="toggleColumnVisibility('user')">visibility</mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.name.first }} {{ element.name.last }} <br> <span style="font-style: italic">Age:</span> {{ element.age }}
+      </td>
+    </ng-container>
+
+    <!-- E-mail column -->
+    <ng-container *ngIf="isColumnVisible('email')" matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        E-mail <mat-icon class="hide-column-button" [matTooltip]="'Hide column'" (click)="toggleColumnVisibility('email')">visibility_off</mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.email }}
+      </td>
+    </ng-container>
+
+    <!-- Address column -->
+    <ng-container *ngIf="isColumnVisible('address')" matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Address <mat-icon class="hide-column-button" [matTooltip]="'Hide column'" (click)="toggleColumnVisibility('address')">visibility_off</mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.address }}
+      </td>
+    </ng-container>
+
+    <!-- Company column -->
+    <ng-container *ngIf="isColumnVisible('company')" matColumnDef="company">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Company <mat-icon class="hide-column-button" [matTooltip]="'Hide column'" (click)="toggleColumnVisibility('company')">visibility_off</mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.company }}</td>
+    </ng-container>
+
+    <!-- Tags column -->
+    <ng-container *ngIf="isColumnVisible('tags')" matColumnDef="tags">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Tags <mat-icon class="hide-column-button" [matTooltip]="'Hide column'" (click)="toggleColumnVisibility('tags')">visibility_off</mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.tags.join(', ') }}
+      </td>
+    </ng-container>
+
+    <!-- Favorite Fruit column -->
+    <ng-container *ngIf="isColumnVisible('favoriteFruit')" matColumnDef="favoriteFruit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Favorite Fruit <mat-icon class="hide-column-button" [matTooltip]="'Hide column'" (click)="toggleColumnVisibility('favoriteFruit')">visibility_off</mat-icon>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.favoriteFruit }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25]" (page)="pageChange($event)"></mat-paginator>
+</div>

@@ -1,27 +1,118 @@
-# CryptoshtampTableApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+---
 
-## Development server
+# CryptoShtamp Table App
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A web application built with Angular for displaying and managing tabular data with dynamic column visibility and sorting features.
 
-## Code scaffolding
+## Table of Contents
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Build
+## Introduction
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The CryptoShtamp Table App is an Angular-based application designed to provide a dynamic and interactive table view for managing data. Key features include adjustable column visibility, sorting, filtering, and pagination. This app is useful for displaying and managing user information or any tabular data efficiently.
 
-## Running unit tests
+## Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Dynamic Column Visibility:** Users can show or hide columns as needed.
+- **Sorting:** Columns can be sorted in ascending or descending order.
+- **Filtering:** Apply filters to search for specific data.
+- **Pagination:** Navigate through data with pagination controls.
 
-## Running end-to-end tests
+## Getting Started
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Prerequisites
 
-## Further help
+Make sure you have the following installed:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Node.js](https://nodejs.org/) (12.x or later)
+- [Angular CLI](https://angular.io/cli) (You can install it globally using `npm install -g @angular/cli`)
+
+### Installation
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/ArtushR/functional-table.git
+   ```
+
+2. **Navigate to the Project Directory:**
+
+   ```bash
+   cd functional-table
+   ```
+
+3. **Install Dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+1. **Serve the Application:**
+
+   ```bash
+   ng serve
+   ```
+
+2. **Open Your Browser:**
+
+   Go to `http://localhost:4200` to view the application.
+
+## Usage
+
+- **Show/Hide Columns:** Click the visibility icon in the table header to show or hide columns.
+- **Sort Data:** Click on the column headers to sort the data.
+- **Filter Data:** Use the search input field to filter table data.
+- **Pagination:** Use pagination controls to navigate through data.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
+
+1. Fork the repository.
+2. Create a feature branch:
+
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -am 'Add new feature'
+   ```
+
+4. Push the branch:
+
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or feedback, please contact:
+
+- **Name:** Artush Rushanyan
+- **Email:** artush.rushanyan@gmail.com
+- **GitHub:** [ArtushR](https://github.com/ArtushR)
+
+---
+
