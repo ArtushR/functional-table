@@ -1,0 +1,70 @@
+.table-container {
+  margin-top: 40px;
+  display: flex;
+  padding: 0 10px;
+  flex-direction: column;
+  align-self: center;
+  overflow: hidden;
+}
+
+.table-container table {
+  width: 100%;
+  table-layout: auto; /* columns auto-resize based on content */
+}
+
+.table-container th.mat-header-cell,
+.table-container td.mat-cell {
+  max-width: 200px; /* maximum width for cells */
+  overflow: visible;
+  color: #7676f5;
+  white-space: normal;
+  word-wrap: break-word;
+  height: auto;
+}
+
+
+.hide-column-button {
+  display: inline-flex;
+  margin-left: 10px;
+  margin-right: -5px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #a2a2a2;
+  cursor: pointer;
+}
+
+.hide-column-button.first-column {
+  margin-left: 0;
+}
+
+
+.filter-input {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-indicator.active {
+  background-color: #75ad75; /* Green color for active status */
+}
+
+.status-indicator.inactive {
+  background-color: #c56060; /* Red color for inactive status */
+}
+
+
+.show-all-columns {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: end;
+  align-items: center;
+}
+
